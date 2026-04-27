@@ -69,7 +69,7 @@ BETWEENSPACE = 0.8; // The Betweenspace:  The void between realms...  And keycap
 
 // BASIC KEYCAP PARAMETERS
 // If you want to make a keycap using a common profile set this to one of: dcs, dss, dsa, kat, kam, riskeycap, gem:
-KEY_PROFILE = "riskeycap"; // [riskeycap, gem, dsa, dcs, dss, kat, kam]
+KEY_PROFILE = "dcs"; // [riskeycap, gem, dsa, dcs, dss, kat, kam]
 // Any value other than a supported profile (e.g. "dsa") will use the globals specified below.  In other words, an empty KEY_PROFILE means "just use the values specified here in this file."
 KEY_ROW = 1; // NOTE: For a spacebar make sure you also set DISH_INVERT=true
 // Some settings override profile settings but most will be ignored (if using a profile)
@@ -148,7 +148,7 @@ STEM_INSET = 1; // How far to inset the stem (set to 0 to have the stem rest on 
 STEM_FLAT_SUPPORT = false; // Add built-in support for the stem when printing flat (if inset)
 STEM_SIDE_SUPPORT_THICKNESS = 1; // 1 works well for most things
 // This controls which sides get (internal, under-the-top) stem supports (for printing on the side):
-STEM_SIDE_SUPPORTS = [0,1,0,0]; // Left, right, front, back
+STEM_SIDE_SUPPORTS = [0,0,0,0]; // Left, right, front, back
 // NOTE: You can only enable left/right supports *or* front/back supports.  Not both at the same time. (TODO: Fix that...  Maybe?  Why would you ever need *both* say, a left support *and* a top support at the same time?)
 STEM_SUPPORT_DISTANCE = 0.2; // Controls the air gap between the stem and its support
 // NOTE: If printing with a small nozzle like 0.25mm you might want to set the support distance to 0 to prevent "misses".

@@ -225,7 +225,7 @@ module DCS_keycap(row=2, length=18.15, width=18.15, height_extra=0, wall_thickne
     }
     row = row < 6 ? row : 5; // We only support rows 0-4 (5 total rows)
     dish_type = "cylinder";
-    dish_depth = 1;
+    dish_depth = 0;
     top_y = -1.75;
     poly_keycap(
         height=row_height[row]+height_extra, length=length, width=width,
