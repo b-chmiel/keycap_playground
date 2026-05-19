@@ -81,15 +81,15 @@ KEY_LENGTH = (KEY_UNIT*1-BETWEENSPACE); // The X (NOTE: Increase DISH_FN if you 
 KEY_WIDTH = (KEY_UNIT*1-BETWEENSPACE); // The Y (NOTE: If using POLYGON_EGDES>4 this will be ignored)
 // NOTE: Spacebars don't seem to use BETWEENSPACE (for whatever reason).  So to make a spacebar just use "KEY_UNIT*<spacebar unit length>" and omit the "-BETWEENSPACE" part.  Or just be precise and give it a value like 119.0625 (19.05*6.25)
 // NOTE: When making longer keycaps you may need to increase KEY_HEIGHT slightly in order for the height to be accurate.  I recommend giving it an extra 0.3mm per extra unit of length so 2U would be +0.3, 3U would be +0.6, etc BUT DOUBLE CHECK IT.  Do a side profile view and look at the ruler or render it and double-check the height in your slicer.
-//KEY_ROTATION = [0,0,0]; // I *highly* recommend 3D printing keycaps on their front/back/sides! Try this:
-KEY_ROTATION = [0,110.1,90]; // An example of how you'd rotate a keycap on its side.  Make sure to zoom in on the bottom to make sure it's *actually* going to print flat! This should be the correct rotation for riskeycap profile.  For GEM use:
+KEY_ROTATION = [180,0,0]; // I *highly* recommend 3D printing keycaps on their front/back/sides! Try this:
+//KEY_ROTATION = [0,110.1,90]; // An example of how you'd rotate a keycap on its side.  Make sure to zoom in on the bottom to make sure it's *actually* going to print flat! This should be the correct rotation for riskeycap profile.  For GEM use:
 //KEY_ROTATION = [0,108.6,90];
 // NOTE: If you rotate a keycap to print on its side don't forget to add a built-in support via STEM_SIDE_SUPPORTS! [0,1,0,0] is what you want if you rotated to print on the right side.
 KEY_TOP_DIFFERENCE = 5; // How much skinnier the key is at the top VS the bottom [x,y]
 KEY_TOP_X = 0; // Move the keycap's top on the X axis (controls skew left/right)
 KEY_TOP_Y = 0; // Move the keycap's top on the Y axis (controls skew forward/backward)
-WALL_THICKNESS = 0.45*2.25; // Default: 0.45 extrusion width * 2.25 (nice and thick; feels/sounds good). NOTE: STEM_SIDES_WALL_THICKNESS gets added to this.
-UNIFORM_WALL_THICKNESS = true; // Much more expensive rendering but the material under the dish will match the sides (even the shape of the dish will be matched)
+WALL_THICKNESS = 0.45*1.2; // Default: 0.45 extrusion width * 2.25 (nice and thick; feels/sounds good). NOTE: STEM_SIDES_WALL_THICKNESS gets added to this.
+UNIFORM_WALL_THICKNESS = false; // Much more expensive rendering but the material under the dish will match the sides (even the shape of the dish will be matched)
 // NOTE: UNIFORM_WALL_THICKNESS uses WALL_THICKNESS instead of DISH_THICKNESS. So DISH_THICKNESS will be ignored if you enable this option.
 
 // DO THE DISHES!
@@ -176,13 +176,13 @@ HOMING_DOT_Z = -0.35; // 0 == Right at KEY_HEIGHT (dish type makes a big differe
 
 // LEGENDARY!
 LEGENDS = [ // As many legends as you want
-//    "A",
+    "A",
 //    "1", "!", // Just an example of multiple legends (uncomment to try it!)
 //    "☺", // Unicode characters work too!
 ];
 // NOTE: Legends might not look quite right until final render (F6)
 LEGEND_FONTS = [ // Each legend can use its own font. If not specified the first font definition will be used
-    "Overpass Nerd Font",
+    "Helvenica",
 //    "Arial Black:style=Regular", // Position/index must match the index in LEGENDS
 //    "Franklin Gothic Medium:style=Regular" // Normal-ish keycap legend font
 //    "Gotham Rounded:style=Bold", // Looks similar to the SA Dasher font
@@ -192,7 +192,7 @@ LEGEND_FONT_SIZES = [ // Each legend can have its own font size
     5.5, // Position/index must match the index in LEGENDS (this is the first legend)
     4, // Second legend...  etc
 ];
-LEGEND_CARVED = false; // Makes it so the bottom of the legend matches the shape of the dish (in case you want to translate() it up to the top of the keycap to finely control its depth).  Slows down rendering quite a bit so unless you have a specific need you'd best keep it set to false.
+LEGEND_CARVED = true; // Makes it so the bottom of the legend matches the shape of the dish (in case you want to translate() it up to the top of the keycap to finely control its depth).  Slows down rendering quite a bit so unless you have a specific need you'd best keep it set to false.
 /* NOTES ABOUT LEGEND TRANSLATION AND ROTATION
     * Legends are translated and rotated in the following order:
         translate(trans2) rotate(rotation2) translate(trans) rotate(rotation)
@@ -205,11 +205,11 @@ LEGEND_TRANS = [ // You can translate() legends around however you like.
     [4.40,KEY_TOP_Y+2.25,0], // Top right (mostly)
 ];
 LEGEND_ROTATION = [ // How to rotate each legend. If not specified defaults to [0,0,0]
-    [0,0,0],
+    [0,0,180],
 //    [60,0,0], // Example of how you'd put a legend on the front (try it!)
 ];
 LEGEND_TRANS2 = [ // Second translate() call (see note above)
-    [0,0,0],
+    [0,-1.75,1],
 ];
 LEGEND_ROTATION2 = [ // Sometimes you want to rotate again after translate(); that's what this is for
     [0,0,0],

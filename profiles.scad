@@ -211,7 +211,7 @@ module DCS_keycap(row=2, length=18.15, width=18.15, height_extra=0, wall_thickne
         0, 9.5, 7.39, 7.39, 9, 12.5
     ];
     dish_tilt = [
-        0, -1, 3, 7, 16, -6
+        0, 0, 3, 7, 16, -6
     ];
     dish_z = [ // Dish needs to cut into the top a unique amount depending on the height and angle
         0, -0.11, -0.38, -0.78, 0.6, -0.75
